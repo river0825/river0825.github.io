@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="cht">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Tech Me, River!!" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Atom ＋ Markdown Enhance + Gitlab Why? 為何? 大概是怎樣呢? atom 編輯 git 版控 gitlab server 分享   功能 demo 其他的 Markdown 語法 功能 - 畫UML 1 功能 - 畫UML 2 寫 slide 寫 slide 的相關文件 功能 - 數學算式   安裝說明 安裝說明 - Plantuml 下載 plantuml">
+<meta name="keywords" content="markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mark Down Enhance with Gitlab">
+<meta property="og:url" content="https:&#x2F;&#x2F;river0825.github.io&#x2F;2018&#x2F;10&#x2F;08&#x2F;markdown-enhance&#x2F;index.html">
+<meta property="og:site_name" content="Tech Me, River!!">
+<meta property="og:description" content="Atom ＋ Markdown Enhance + Gitlab Why? 為何? 大概是怎樣呢? atom 編輯 git 版控 gitlab server 分享   功能 demo 其他的 Markdown 語法 功能 - 畫UML 1 功能 - 畫UML 2 寫 slide 寫 slide 的相關文件 功能 - 數學算式   安裝說明 安裝說明 - Plantuml 下載 plantuml">
+<meta property="og:locale" content="cht">
+<meta property="og:updated_time" content="2019-11-05T15:46:45.000Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://river0825.github.io/2018/10/08/markdown-enhance/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Mark Down Enhance with Gitlab | Tech Me, River!!</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tech Me, River!!</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2018/10/08/markdown-enhance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mark Down Enhance with Gitlab
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-10-08 11:11:43" itemprop="dateCreated datePublished" datetime="2018-10-08T11:11:43+08:00">2018-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-05 23:46:45" itemprop="dateModified" datetime="2019-11-05T23:46:45+08:00">2019-11-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+<ul>
+<li><a href="#atom-markdown-enhance-gitlab">Atom ＋ Markdown Enhance + Gitlab</a></li>
+<li><a href="#why-為何">Why? 為何?</a></li>
+<li><a href="#大概是怎樣呢">大概是怎樣呢?</a><ul>
+<li><a href="#atom-編輯">atom 編輯</a></li>
+<li><a href="#git-版控">git 版控</a></li>
+<li><a href="#gitlab-server-分享">gitlab server 分享</a></li>
+</ul>
+</li>
+<li><a href="#功能-demo">功能 demo</a><ul>
+<li><a href="#其他的-markdown-語法">其他的 Markdown 語法</a></li>
+<li><a href="#功能-畫uml-1">功能 - 畫UML 1</a></li>
+<li><a href="#功能-畫uml-2">功能 - 畫UML 2</a></li>
+<li><a href="#寫-slide">寫 slide</a></li>
+<li><a href="#寫-slide-的相關文件">寫 slide 的相關文件</a></li>
+<li><a href="#功能-數學算式">功能 - 數學算式</a></li>
+</ul>
+</li>
+<li><a href="#安裝說明">安裝說明</a></li>
+<li><a href="#安裝說明-plantuml">安裝說明 - Plantuml</a><ul>
+<li><a href="#下載-plantumlhttpplantumlcomdownload">下載 plantuml</a></li>
+<li><a href="#安裝-graphvis">安裝 GraphVis</a></li>
+<li><a href="#test">Test</a></li>
+</ul>
+</li>
+<li><a href="#如何將-寫好的文件放至-gitlab-上">如何將 寫好的文件放至 gitlab 上</a><ul>
+<li><a href="#找到-或-建立-專案">找到 或 建立 專案</a></li>
+<li><a href="#把-wiki-clone-到-本機上">把 wiki clone 到 本機上</a></li>
+<li><a href="#編輯完了要放上-server">編輯完了要放上 Server</a></li>
+</ul>
+</li>
+<li><a href="#qa">Q&amp;A</a></li>
+</ul>
+<!-- tocstop -->
+<!-- slide-->
+<h1 id="Atom-＋-Markdown-Enhance-Gitlab"><a href="#Atom-＋-Markdown-Enhance-Gitlab" class="headerlink" title="Atom ＋ Markdown Enhance + Gitlab"></a>Atom ＋ Markdown Enhance + Gitlab</h1><p><em>River</em></p>
+<p>2017-05-24</p>
+<!-- slide -->
+<h1 id="Why-為何"><a href="#Why-為何" class="headerlink" title="Why? 為何?"></a>Why? 為何?</h1><ul>
+<li>專注於 內容</li>
+<li>語法簡單</li>
+<li>可版控</li>
+<li>多人協作</li>
+<li>畫圖</li>
+<li>簡報</li>
+</ul>
+<!-- slide -->
+<h1 id="大概是怎樣呢"><a href="#大概是怎樣呢" class="headerlink" title="大概是怎樣呢?"></a>大概是怎樣呢?</h1><h3 id="atom-編輯"><a href="#atom-編輯" class="headerlink" title="atom 編輯"></a>atom 編輯</h3><ul>
+<li>編輯你的 檔案</li>
+<li>live view</li>
+</ul>
+<h3 id="git-版控"><a href="#git-版控" class="headerlink" title="git 版控"></a>git 版控</h3><ul>
+<li>commit 每次的編輯</li>
+<li>將編輯後的文件 push 上 server</li>
+</ul>
+<h3 id="gitlab-server-分享"><a href="#gitlab-server-分享" class="headerlink" title="gitlab server 分享"></a>gitlab server 分享</h3><ul>
+<li>project wiki</li>
+</ul>
+<!-- slide -->
+<h1 id="功能-demo"><a href="#功能-demo" class="headerlink" title="功能 demo"></a>功能 demo</h1><p>github: <a href="https://github.com/shd101wyy/markdown-preview-enhanced" target="_blank" rel="noopener">https://github.com/shd101wyy/markdown-preview-enhanced</a><br>詳細文件: <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/" target="_blank" rel="noopener">https://shd101wyy.github.io/markdown-preview-enhanced/#/</a></p>
+<p>  <strong>Markdown 基本語法</strong><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#    -&gt; 標題1</span><br><span class="line">##   -&gt; 標題2</span><br><span class="line">###  -&gt; 標題3</span><br><span class="line">#### -&gt; 標題4</span><br></pre></td></tr></table></figure></p>
+<!-- slide -->
+<h2 id="其他的-Markdown-語法"><a href="#其他的-Markdown-語法" class="headerlink" title="其他的 Markdown 語法"></a>其他的 Markdown 語法</h2><p>去看文件啦~~</p>
+<p><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics" target="_blank" rel="noopener">文件底甲</a></p>
+<!-- slide -->
+<h2 id="功能-畫UML-1"><a href="#功能-畫UML-1" class="headerlink" title="功能 - 畫UML 1"></a>功能 - 畫UML 1</h2><ul>
+<li>畫 UML <a href="http://plantuml.com/" target="_blank" rel="noopener">語法看這</a><div class = "slide-2col-left">
+
+</li>
+</ul>
+<p>Sequence Diagram</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">actor Alice</span><br><span class="line"></span><br><span class="line">Alice -&gt; Nana</span><br><span class="line">Nana -&gt; James</span><br><span class="line">Nana -&gt; James : new feature</span><br></pre></td></tr></table></figure>
+<p>&lt;/div&gt;</p>
+<div class = "slide-2col-right">
+Activity Diagram
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">start</span><br><span class="line"></span><br><span class="line">if (Graphviz installed?) then (yes)</span><br><span class="line">  :process all\ndiagrams;</span><br><span class="line">else (no)</span><br><span class="line">  :process only</span><br><span class="line">  __sequence__ and __activity__ diagrams;</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">stop</span><br></pre></td></tr></table></figure>
+</div>
+
+<!-- slide vertical:true -->
+<h2 id="功能-畫UML-2"><a href="#功能-畫UML-2" class="headerlink" title="功能 - 畫UML 2"></a>功能 - 畫UML 2</h2><ul>
+<li>畫 UML <a href="http://plantuml.com/" target="_blank" rel="noopener">語法看這</a><div class = "slide-2col-left">
+
+</li>
+</ul>
+<p>Class Diagram</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">abstract class AbstractList</span><br><span class="line">abstract AbstractCollection</span><br><span class="line">interface List</span><br><span class="line">interface Collection</span><br><span class="line"></span><br><span class="line">List &lt;|-- AbstractList</span><br><span class="line">Collection &lt;|-- AbstractCollection</span><br><span class="line"></span><br><span class="line">Collection &lt;|- List</span><br><span class="line">AbstractCollection &lt;|- AbstractList</span><br><span class="line">AbstractList &lt;|-- ArrayList</span><br><span class="line"></span><br><span class="line">class ArrayList &#123;</span><br><span class="line">  Object[] elementData</span><br><span class="line">  size()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">enum TimeUnit &#123;</span><br><span class="line">  DAYS</span><br><span class="line">  HOURS</span><br><span class="line">  MINUTES</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">annotation SuppressWarnings</span><br></pre></td></tr></table></figure>
+<p>&lt;/div&gt;</p>
+<p><div class = "slide-2col-right"><br>State Diagram</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[*] -&gt; State1</span><br><span class="line">State1 --&gt; State2 : Succeeded</span><br><span class="line">State1 --&gt; [*] : Aborted</span><br><span class="line">State2 --&gt; State3 : Succeeded</span><br><span class="line">State2 --&gt; [*] : Aborted</span><br><span class="line">state State3 &#123;</span><br><span class="line">  state &quot;Accumulate Enough Data\nLong State Name&quot; as long1</span><br><span class="line">  long1 : Just a test</span><br><span class="line">  [*] --&gt; long1</span><br><span class="line">  long1 --&gt; long1 : New Data</span><br><span class="line">  long1 --&gt; ProcessData : Enough Data</span><br><span class="line">&#125;</span><br><span class="line">State3 --&gt; State3 : Failed</span><br><span class="line">State3 --&gt; [*] : Succeeded / Save Result</span><br><span class="line">State3 --&gt; [*] : Aborted</span><br></pre></td></tr></table></figure>
+<!-- slide  -->
+<h2 id="寫-slide"><a href="#寫-slide" class="headerlink" title="寫 slide"></a>寫 slide</h2><p><span class="fragment fade-in">這個 slide 就是用 markdown 寫的哦</span><br><span class="fragment">這個 slide 就是用 markdown 寫的哦</span><br><span class="fragment">這個 slide 就是用 markdown 寫的哦</span><br><span class="fragment">因為很好寫，所以要講 3 次</span></p>
+<!-- slide  -->
+<h2 id="寫-slide-的相關文件"><a href="#寫-slide-的相關文件" class="headerlink" title="寫 slide 的相關文件"></a>寫 slide 的相關文件</h2><p><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/presentation?id=customize-slide-style" target="_blank" rel="noopener">說明</a></p>
+<p><a href="https://rawgit.com/shd101wyy/markdown-preview-enhanced/master/docs/presentation-intro.html" target="_blank" rel="noopener">demo 1</a></p>
+<p><a href="https://github.com/hakimel/reveal.js/" target="_blank" rel="noopener">reveal.js</a></p>
+<p><span class="fragment"> reveal js 是一個寫 slide 的 套件</span></p>
+<!-- slide -->
+<h2 id="功能-數學算式"><a href="#功能-數學算式" class="headerlink" title="功能 - 數學算式"></a>功能 - 數學算式</h2><ul>
+<li>簡單的就能寫出唬人的算式  $ \int_1^\infty{\frac{1}{1 - e^{-1}}x^n dx} $</li>
+</ul>
+<p><span class="fragment fade-out"></p>
+<script type="math/tex; mode=display">\sum^i_{i=100}</script><script type="math/tex; mode=display">\left(\sum^n_{i=0}i^2 = \frac{(n^2+n)(2n+1)}{6} \right)</script><p>&lt;/span&gt;</p>
+<p><span class="fragment fade-out"></p>
+<script type="math/tex; mode=display">\Gamma(z) =  
+  \int_0 ^ \infty t ^{z-1} e ^{-t} d t</script><p><span class="fragment fade-out"></p>
+<p>使用的是 <a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a><br><a href="http://waterbolik.github.io/jekyll/2015/10/14/MathJax%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3" target="_blank" rel="noopener">MathJax语法详解</a></p>
+<!-- slide -->
+<h1 id="安裝說明"><a href="#安裝說明" class="headerlink" title="安裝說明"></a>安裝說明</h1><ul>
+<li><a href="https://atom.io" target="_blank" rel="noopener">ATOM</a></li>
+<li>ATOM package - Markdown Preview Enahnced</li>
+<li>git client<ul>
+<li>or <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a></li>
+<li>or ATOM package - Git Plus</li>
+</ul>
+</li>
+<li>GraphVis</li>
+</ul>
+<!-- slide -->
+<h1 id="安裝說明-Plantuml"><a href="#安裝說明-Plantuml" class="headerlink" title="安裝說明 - Plantuml"></a>安裝說明 - Plantuml</h1><h3 id="下載-plantuml"><a href="#下載-plantuml" class="headerlink" title="下載 plantuml"></a>下載 <a href="http://plantuml.com/download" target="_blank" rel="noopener">plantuml</a></h3><h3 id="安裝-GraphVis"><a href="#安裝-GraphVis" class="headerlink" title="安裝 GraphVis"></a>安裝 GraphVis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew install libtool</span><br><span class="line">brew link libtool</span><br><span class="line">brew install graphviz</span><br><span class="line">brew link --overwrite graphviz</span><br></pre></td></tr></table></figure>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar plantuml.jar -testdot</span><br></pre></td></tr></table></figure>
+<!-- slide -->
+<h1 id="如何將-寫好的文件放至-gitlab-上"><a href="#如何將-寫好的文件放至-gitlab-上" class="headerlink" title="如何將 寫好的文件放至 gitlab 上 ??"></a>如何將 寫好的文件放至 gitlab 上 ??</h1><!-- slide -->
+<h2 id="找到-或-建立-專案"><a href="#找到-或-建立-專案" class="headerlink" title="找到 或 建立 專案"></a>找到 或 建立 專案</h2><blockquote>
+<p>登入 -&gt; New Project</p>
+</blockquote>
+<!-- slide -->
+<h2 id="把-wiki-clone-到-本機上"><a href="#把-wiki-clone-到-本機上" class="headerlink" title="把 wiki clone 到 本機上"></a>把 wiki clone 到 本機上</h2><blockquote>
+<ol>
+<li>點選 project -&gt; Wiki -&gt; Clone repository -&gt; copy Path</li>
+<li>打開 terminal, 到你想去的目錄中</li>
+<li>git clone [repository url]</li>
+<li>$ cd [project.wiki]; atom .;</li>
+</ol>
+</blockquote>
+<!-- slide -->
+<h2 id="編輯完了要放上-Server"><a href="#編輯完了要放上-Server" class="headerlink" title="編輯完了要放上 Server"></a>編輯完了要放上 Server</h2><blockquote>
+<ol>
+<li>git add * ; git commit -m “markdown 好好用”; git push</li>
+</ol>
+</blockquote>
+<!-- slide -->
+<h1 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/markdown/" rel="tag"># markdown</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2018/10/05/docker/manage-data-in-docker/" rel="next" title="Manage data in Docker">
+                  <i class="fa fa-chevron-left"></i> Manage data in Docker
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2018/10/27/sinica/" rel="prev" title="中研院演講 - 極端氣候九局下半">
+                  中研院演講 - 極端氣候九局下半 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Atom-＋-Markdown-Enhance-Gitlab"><span class="nav-number">1.</span> <span class="nav-text">Atom ＋ Markdown Enhance + Gitlab</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-為何"><span class="nav-number">2.</span> <span class="nav-text">Why? 為何?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大概是怎樣呢"><span class="nav-number">3.</span> <span class="nav-text">大概是怎樣呢?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#atom-編輯"><span class="nav-number">3.0.1.</span> <span class="nav-text">atom 編輯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-版控"><span class="nav-number">3.0.2.</span> <span class="nav-text">git 版控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gitlab-server-分享"><span class="nav-number">3.0.3.</span> <span class="nav-text">gitlab server 分享</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能-demo"><span class="nav-number">4.</span> <span class="nav-text">功能 demo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#其他的-Markdown-語法"><span class="nav-number">4.1.</span> <span class="nav-text">其他的 Markdown 語法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能-畫UML-1"><span class="nav-number">4.2.</span> <span class="nav-text">功能 - 畫UML 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能-畫UML-2"><span class="nav-number">4.3.</span> <span class="nav-text">功能 - 畫UML 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寫-slide"><span class="nav-number">4.4.</span> <span class="nav-text">寫 slide</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寫-slide-的相關文件"><span class="nav-number">4.5.</span> <span class="nav-text">寫 slide 的相關文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能-數學算式"><span class="nav-number">4.6.</span> <span class="nav-text">功能 - 數學算式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝說明"><span class="nav-number">5.</span> <span class="nav-text">安裝說明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝說明-Plantuml"><span class="nav-number">6.</span> <span class="nav-text">安裝說明 - Plantuml</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下載-plantuml"><span class="nav-number">6.0.1.</span> <span class="nav-text">下載 plantuml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-GraphVis"><span class="nav-number">6.0.2.</span> <span class="nav-text">安裝 GraphVis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Test"><span class="nav-number">6.0.3.</span> <span class="nav-text">Test</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何將-寫好的文件放至-gitlab-上"><span class="nav-number">7.</span> <span class="nav-text">如何將 寫好的文件放至 gitlab 上 ??</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#找到-或-建立-專案"><span class="nav-number">7.1.</span> <span class="nav-text">找到 或 建立 專案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把-wiki-clone-到-本機上"><span class="nav-number">7.2.</span> <span class="nav-text">把 wiki clone 到 本機上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#編輯完了要放上-Server"><span class="nav-number">7.3.</span> <span class="nav-text">編輯完了要放上 Server</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">8.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="River Lin"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">River Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">River Lin</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
