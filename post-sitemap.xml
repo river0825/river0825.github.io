@@ -24,7 +24,7 @@
     </url>
 
     <url>
-        <loc>https://river0825.github.io/2019/08/03/docker-swarm/</loc>
+        <loc>https://river0825.github.io/2018/10/08/markdown-enhance/</loc>
         <lastmod>2019-11-05T15:46:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -32,7 +32,7 @@
     </url>
 
     <url>
-        <loc>https://river0825.github.io/2018/10/08/markdown-enhance/</loc>
+        <loc>https://river0825.github.io/2019/08/03/docker-swarm/</loc>
         <lastmod>2019-11-05T15:46:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -72,7 +72,7 @@
     </url>
 
     <url>
-        <loc>https://river0825.github.io/2018/09/25/docker/setup-gitlab-runner-with-docker-container/</loc>
+        <loc>https://river0825.github.io/2018/09/25/mysql/update_mysql_password_with_41_digits/</loc>
         <lastmod>2018-09-25T10:11:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -80,7 +80,7 @@
     </url>
 
     <url>
-        <loc>https://river0825.github.io/2018/09/25/mysql/update_mysql_password_with_41_digits/</loc>
+        <loc>https://river0825.github.io/2018/09/25/docker/setup-gitlab-runner-with-docker-container/</loc>
         <lastmod>2018-09-25T10:11:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
