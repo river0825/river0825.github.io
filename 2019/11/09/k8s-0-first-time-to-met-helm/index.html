@@ -22,7 +22,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="Tech Me, River!!">
 <meta property="og:description" content="今天上的 Helm &#x2F; skaffold &#x2F; terraform &#x2F; istio 真的有點開眼界 Helm 管理 k8s container 的狀態 用 skaffold 來加速發佈的流程 Terraform 來建立需要的 VM istio 來建立 service mesh, 進行圖型化的監控 相關資源如下 Slide:https:&#x2F;&#x2F;reurl.cc&#x2F;EKV2b1 Slide:https:&#x2F;&#x2F;r">
 <meta property="og:locale" content="cht">
-<meta property="og:updated_time" content="2019-11-09T15:14:43.000Z">
+<meta property="og:updated_time" content="2019-11-09T15:16:08.000Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://river0825.github.io/2019/11/09/k8s-0-first-time-to-met-helm/">
@@ -80,7 +80,7 @@
   <title>K8s From Hero to Zero | Tech Me, River!!</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126979522-1"></script>
-    <script pjax>
+    <script>
       var host = window.location.hostname;
       if (host !== "localhost" || !true) {
         window.dataLayer = window.dataLayer || [];
@@ -157,17 +157,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -229,7 +229,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-09 22:09:57 / Modified: 23:14:43" itemprop="dateCreated datePublished" datetime="2019-11-09T22:09:57+08:00">2019-11-09</time>
+              <time title="Created: 2019-11-09 22:09:57 / Modified: 23:16:08" itemprop="dateCreated datePublished" datetime="2019-11-09T22:09:57+08:00">2019-11-09</time>
             </span>
 
           
@@ -400,7 +400,7 @@
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
   </div>
 
         
@@ -449,7 +449,7 @@
       }
     }
   </script>
-  <script pjax>
+  <script>
     (function() {
       var db = firebase.firestore();
       var articles = db.collection('articles');
@@ -495,72 +495,14 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
@@ -580,20 +522,19 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
 
   
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
 <script>
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
-      clientID: 'Iv1.c7c077371afbbcc8',
-      clientSecret: 'ae438fae9b8f0ac751a02c42400b3f283283d10c',
-      repo: 'https://github.com/river0825/blog-comments',
+      clientID: '535795f9a9a3ef1b0508',
+      clientSecret: 'ca7857aa80031f500c42f4a0dadf0a35ee6be70c',
+      repo: 'blog-comments',
       owner: 'river0825',
       admin: ['river0825'],
       id: '63a24547448e3f5a1ad537e2e217905f',
@@ -604,6 +545,5 @@ window.addEventListener('pjax:success', () => {
   }, window.Gitalk);
 </script>
 
-    </div>
 </body>
 </html>
