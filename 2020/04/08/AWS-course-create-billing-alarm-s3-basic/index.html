@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Microsoft JhengHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
@@ -22,7 +22,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -52,15 +52,15 @@
   };
 </script>
 
-  <meta name="description" content="create billing alarmhttps:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;aws-certified-solutions-architect-associate&#x2F;learn&#x2F;lecture&#x2F;13886250#overview  Using cloud watch to create alarm  S3Files are stored in Buckets  The name">
+  <meta name="description" content="Create billing alarmhttps:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;aws-certified-solutions-architect-associate&#x2F;learn&#x2F;lecture&#x2F;13886250#overview  Using cloud watch to create alarm  S3Files are stored in Buckets  The name">
 <meta name="keywords" content="Tech">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS Course - Create Billing Alarm &amp; S3 Basic">
 <meta property="og:url" content="https:&#x2F;&#x2F;river0825.github.io&#x2F;2020&#x2F;04&#x2F;08&#x2F;AWS-course-create-billing-alarm-s3-basic&#x2F;index.html">
 <meta property="og:site_name" content="Tech Me, River!!">
-<meta property="og:description" content="create billing alarmhttps:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;aws-certified-solutions-architect-associate&#x2F;learn&#x2F;lecture&#x2F;13886250#overview  Using cloud watch to create alarm  S3Files are stored in Buckets  The name">
+<meta property="og:description" content="Create billing alarmhttps:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;aws-certified-solutions-architect-associate&#x2F;learn&#x2F;lecture&#x2F;13886250#overview  Using cloud watch to create alarm  S3Files are stored in Buckets  The name">
 <meta property="og:locale" content="cht">
-<meta property="og:updated_time" content="2020-04-09T01:51:10.652Z">
+<meta property="og:updated_time" content="2020-04-09T02:09:28.216Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://river0825.github.io/2020/04/08/AWS-course-create-billing-alarm-s3-basic/">
@@ -235,7 +235,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-09 09:51:10" itemprop="dateModified" datetime="2020-04-09T09:51:10+08:00">2020-04-09</time>
+                <time title="Modified: 2020-04-09 10:09:28" itemprop="dateModified" datetime="2020-04-09T10:09:28+08:00">2020-04-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="create-billing-alarm"><a href="#create-billing-alarm" class="headerlink" title="create billing alarm"></a>create billing alarm</h2><p><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate/learn/lecture/13886250#overview" target="_blank" rel="noopener">https://www.udemy.com/course/aws-certified-solutions-architect-associate/learn/lecture/13886250#overview</a></p>
+        <h2 id="Create-billing-alarm"><a href="#Create-billing-alarm" class="headerlink" title="Create billing alarm"></a>Create billing alarm</h2><p><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate/learn/lecture/13886250#overview" target="_blank" rel="noopener">https://www.udemy.com/course/aws-certified-solutions-architect-associate/learn/lecture/13886250#overview</a></p>
 <ol>
 <li>Using cloud watch to create alarm</li>
 </ol>
@@ -380,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#create-billing-alarm"><span class="nav-number">1.</span> <span class="nav-text">create billing alarm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S3"><span class="nav-number">2.</span> <span class="nav-text">S3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-is-object-base-Think-of-Objects-just-as-a-file"><span class="nav-number">2.1.</span> <span class="nav-text">S3 is object base, Think of Objects just as a file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-does-data-consistency"><span class="nav-number">2.2.</span> <span class="nav-text">How does data consistency ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Standard"><span class="nav-number">2.3.</span> <span class="nav-text">S3 Standard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-IA-Infrequently-Accessed"><span class="nav-number">2.4.</span> <span class="nav-text">S3 - IA (Infrequently Accessed):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-One-Zone-IA-Infrequently-Accessed"><span class="nav-number">2.5.</span> <span class="nav-text">S3 One Zone - IA (Infrequently Accessed):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Intelligent-Tiering"><span class="nav-number">2.6.</span> <span class="nav-text">S3 - Intelligent Tiering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Glacier-data-archiving"><span class="nav-number">2.7.</span> <span class="nav-text">S3 Glacier - data archiving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Glacier-data-archiving-1"><span class="nav-number">2.8.</span> <span class="nav-text">S3 Glacier - data archiving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Charges"><span class="nav-number">2.9.</span> <span class="nav-text">S3 Charges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">2.10.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Key-Fundamentals-of-S3-are"><span class="nav-number">2.11.</span> <span class="nav-text">The Key Fundamentals of S3 are;</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-billing-alarm"><span class="nav-number">1.</span> <span class="nav-text">Create billing alarm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S3"><span class="nav-number">2.</span> <span class="nav-text">S3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-is-object-base-Think-of-Objects-just-as-a-file"><span class="nav-number">2.1.</span> <span class="nav-text">S3 is object base, Think of Objects just as a file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-does-data-consistency"><span class="nav-number">2.2.</span> <span class="nav-text">How does data consistency ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Standard"><span class="nav-number">2.3.</span> <span class="nav-text">S3 Standard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-IA-Infrequently-Accessed"><span class="nav-number">2.4.</span> <span class="nav-text">S3 - IA (Infrequently Accessed):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-One-Zone-IA-Infrequently-Accessed"><span class="nav-number">2.5.</span> <span class="nav-text">S3 One Zone - IA (Infrequently Accessed):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Intelligent-Tiering"><span class="nav-number">2.6.</span> <span class="nav-text">S3 - Intelligent Tiering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Glacier-data-archiving"><span class="nav-number">2.7.</span> <span class="nav-text">S3 Glacier - data archiving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Glacier-data-archiving-1"><span class="nav-number">2.8.</span> <span class="nav-text">S3 Glacier - data archiving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S3-Charges"><span class="nav-number">2.9.</span> <span class="nav-text">S3 Charges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">2.10.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Key-Fundamentals-of-S3-are"><span class="nav-number">2.11.</span> <span class="nav-text">The Key Fundamentals of S3 are;</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -448,7 +448,7 @@
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
   </div>
 
         

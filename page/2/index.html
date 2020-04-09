@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Microsoft JhengHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
@@ -22,7 +22,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -483,91 +483,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="cht">
-    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2018/09/25/nodejs-ts-create-class-dynamicly/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
-      <meta itemprop="name" content="River Lin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Me, River!!">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/09/25/nodejs-ts-create-class-dynamicly/" class="post-title-link" itemprop="url">TypeScript - How to Create Object From Import</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-09-25 18:11:39" itemprop="dateCreated datePublished" datetime="2018-09-25T18:11:39+08:00">2018-09-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-07 20:18:08" itemprop="dateModified" datetime="2019-11-07T20:18:08+08:00">2019-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="class-loader"><a href="#class-loader" class="headerlink" title="class loader"></a>class loader</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// class file</span></span><br><span class="line"><span class="keyword">class</span> DynamicLoader()&#123;</span><br><span class="line">    <span class="keyword">private</span> command&#123;[index:<span class="built_in">string</span>]: IDynamicClass&#125; = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> load(classFile: <span class="built_in">string</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> dynamicClass = <span class="keyword">await</span> <span class="keyword">import</span>(classFile);</span><br><span class="line">        <span class="built_in">Object</span>.keys(dynamicClass).map(<span class="function"><span class="keyword">function</span>(<span class="params">value: <span class="built_in">string</span>, index: <span class="built_in">number</span>, array</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.commands[index] = <span class="built_in">Object</span>.create(array[value].prototype);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> IDynamicClass&#123;</span><br><span class="line">    execute(data:<span class="built_in">string</span>):<span class="built_in">boolean</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="classFile"><a href="#classFile" class="headerlink" title="classFile"></a>classFile</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> dynamicClass&#123;</span><br><span class="line">    execute(data:<span class="built_in">string</span>):<span class="built_in">boolean</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="cht">
     <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2018/09/25/mysql-update-mysql-password-with-41-digits/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -638,6 +553,91 @@
 <p>還是無法解決</p>
 <p>原來 session 的設定還是舊的，要再加上 <code>SET @@session.old_passwords = 0;</code> 才可以</p>
 <h2 id="完整指令"><a href="#完整指令" class="headerlink" title="完整指令"></a>完整指令</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> @@session.old_passwords = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">PASSWORD</span>(<span class="string">'password'</span>) ;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2018/09/25/nodejs-ts-create-class-dynamicly/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/25/nodejs-ts-create-class-dynamicly/" class="post-title-link" itemprop="url">TypeScript - How to Create Object From Import</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-09-25 18:11:39" itemprop="dateCreated datePublished" datetime="2018-09-25T18:11:39+08:00">2018-09-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-07 20:18:08" itemprop="dateModified" datetime="2019-11-07T20:18:08+08:00">2019-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="class-loader"><a href="#class-loader" class="headerlink" title="class loader"></a>class loader</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// class file</span></span><br><span class="line"><span class="keyword">class</span> DynamicLoader()&#123;</span><br><span class="line">    <span class="keyword">private</span> command&#123;[index:<span class="built_in">string</span>]: IDynamicClass&#125; = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> load(classFile: <span class="built_in">string</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> dynamicClass = <span class="keyword">await</span> <span class="keyword">import</span>(classFile);</span><br><span class="line">        <span class="built_in">Object</span>.keys(dynamicClass).map(<span class="function"><span class="keyword">function</span>(<span class="params">value: <span class="built_in">string</span>, index: <span class="built_in">number</span>, array</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.commands[index] = <span class="built_in">Object</span>.create(array[value].prototype);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> IDynamicClass&#123;</span><br><span class="line">    execute(data:<span class="built_in">string</span>):<span class="built_in">boolean</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="classFile"><a href="#classFile" class="headerlink" title="classFile"></a>classFile</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> dynamicClass&#123;</span><br><span class="line">    execute(data:<span class="built_in">string</span>):<span class="built_in">boolean</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -754,7 +754,7 @@
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
   </div>
 
         
