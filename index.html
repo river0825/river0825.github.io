@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="cht">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Microsoft JhengHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"river0825.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="keywords" content="Tech">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tech Me, River!!">
+<meta property="og:url" content="https:&#x2F;&#x2F;river0825.github.io&#x2F;index.html">
+<meta property="og:site_name" content="Tech Me, River!!">
+<meta property="og:locale" content="cht">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://river0825.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'cht'
+  };
+</script>
+
+  <title>Tech Me, River!!</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126979522-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126979522-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Tech Me, River!!</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/river0825" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2020/04/12/%E6%95%8F%E6%8D%B7%E6%80%9D%E7%B6%AD%E5%B0%88%E9%A1%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/12/%E6%95%8F%E6%8D%B7%E6%80%9D%E7%B6%AD%E5%B0%88%E9%A1%8C/" class="post-title-link" itemprop="url">敏捷思維專題</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-12 10:27:50" itemprop="dateCreated datePublished" datetime="2020-04-12T10:27:50+08:00">2020-04-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-08 10:43:21" itemprop="dateModified" datetime="2020-06-08T10:43:21+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/agile/" itemprop="url" rel="index"><span itemprop="name">agile</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>VUCA</p>
+<p>4 個核心</p>
+<p>12 條原則</p>
+<p>衝刺郵件</p>
+<p>okr + cfr</p>
+<blockquote>
+<p>conversation feedback recognition</p>
+</blockquote>
+<p>為你而讀</p>
+<p>Sales 的 deliverable</p>
+<blockquote>
+<p>contract, SOA</p>
+</blockquote>
+<p>sprint</p>
+<blockquote>
+<p>可以 align epic</p>
+</blockquote>
+<p>定 epic &gt; 來有一個終極的目標</p>
+<h3 id="如何讓人變成-T-型人"><a href="#如何讓人變成-T-型人" class="headerlink" title="如何讓人變成 T 型人"></a>如何讓人變成 T 型人</h3><p>IDP -&gt; 個人發展計劃<br>人員配制上要有 redundent</p>
+<h3 id="LESS-大規模敏捷"><a href="#LESS-大規模敏捷" class="headerlink" title="LESS 大規模敏捷"></a>LESS 大規模敏捷</h3><p>但 MS 沒有在做<br>各 team 在玩各 team 的</p>
+<h2 id="OKR-的好處"><a href="#OKR-的好處" class="headerlink" title="OKR 的好處"></a>OKR 的好處</h2><p>透明 -&gt; 打考績的時後會裝忙</p>
+<p>定 Key Result -&gt; 主管每周都會理你一下   CFR</p>
+<p>目標是拿來挑戰，不是拿來達到的</p>
+<p>財務 - flow buget</p>
+<h2 id="內部講師-用制度南解決"><a href="#內部講師-用制度南解決" class="headerlink" title="內部講師 用制度南解決"></a>內部講師 用制度南解決</h2><p>先定 flow 跟 process, 再來找工具，要不然一定會 fail</p>
+<h2 id="youtube"><a href="#youtube" class="headerlink" title="youtube"></a>youtube</h2><p>產品領導慣任的敏捷之道<br><a href="https://www.youtube.com/watch?v=le89_-YCMvo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=le89_-YCMvo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2020/04/09/aws-s3-cont/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/09/aws-s3-cont/" class="post-title-link" itemprop="url">Aws-S3-Cont</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-09 22:23:54" itemprop="dateCreated datePublished" datetime="2020-04-09T22:23:54+08:00">2020-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-13 16:46:15" itemprop="dateModified" datetime="2020-04-13T16:46:15+08:00">2020-04-13</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="S3-security-and-encryption"><a href="#S3-security-and-encryption" class="headerlink" title="S3 security and encryption"></a>S3 security and encryption</h2><p>Encryption In Transit is achieved by</p>
+<ul>
+<li>SSL/TLS</li>
+</ul>
+<p>Server Side Encryption</p>
+<ul>
+<li>S3 Managed Keys - SSE-S3</li>
+<li>AWS Key Management Service, Managed Keys - SSE-KMS</li>
+<li>Server Side Encryption with Client Provided Keys - SSE-C</li>
+</ul>
+<h2 id="S3-versioning-With-S3"><a href="#S3-versioning-With-S3" class="headerlink" title="S3 versioning With S3;"></a>S3 versioning With S3;</h2><p>Stores all versions of an object(including all wirtes and event if you delete an object)<br>Greate backup tool<br>Once enabled, Versioning cannot be disabled, only suspended<br>Integrates with Lifecycle rules<br>Versioning’s <code>MFA Delete</code> capability, which uses multi-factor authentication, </p>
+<h2 id="Lifecycle-Management-with-S3"><a href="#Lifecycle-Management-with-S3" class="headerlink" title="Lifecycle Management with S3"></a>Lifecycle Management with S3</h2><ol>
+<li>Automate moving your objects between the different storage tiers.</li>
+<li>Can be used in cojunction with versioning.</li>
+<li>can be applied to current versions and previous versions</li>
+</ol>
+<h2 id="AWS-Organizations-amp-Consolidated-Billing"><a href="#AWS-Organizations-amp-Consolidated-Billing" class="headerlink" title="AWS Organizations &amp; Consolidated Billing"></a>AWS Organizations &amp; Consolidated Billing</h2><ul>
+<li>Always enable multi-facotr authentication on root account</li>
+<li>Always use a strong and complex password on root account</li>
+<li>Paying account should be used for billing purposes only. Do not deploy resources into the paying account</li>
+<li>Enabled/Disable AWS services using Service Control Policies(SCP) either on OU or indevidual accounts.</li>
+</ul>
+<h2 id="Share-s3-bucket-Across-Accounts"><a href="#Share-s3-bucket-Across-Accounts" class="headerlink" title="Share s3 bucket Across Accounts"></a>Share s3 bucket Across Accounts</h2><ul>
+<li>Using Bucket Policies * IAM (applies across the entire bucket). Programmatic Access Only.</li>
+<li>Using bucket ACLs &amp; IAM(individual objects). Programmatic Access Only.</li>
+<li>Cross-account IAM Roles, Programatic and console access.</li>
+</ul>
+<h2 id="Cross-Region-Replication"><a href="#Cross-Region-Replication" class="headerlink" title="Cross Region Replication"></a>Cross Region Replication</h2><ul>
+<li>Versioning must be enabled on both the source and destination buckets.</li>
+<li>Files in an existsing bucket are not replicated automatically.</li>
+<li>All subsequent updated files will be replicated automatically.</li>
+<li>Delete markers are not replicated.</li>
+<li>Deleting individual versions or delete markders will not be replicated.</li>
+<li>Understand what Cross Region Repliction is at a high level.</li>
+</ul>
+<h2 id="S3-transfer-Acceleration"><a href="#S3-transfer-Acceleration" class="headerlink" title="S3 transfer Acceleration"></a>S3 transfer Acceleration</h2><p>Accelerate your uploads to S3</p>
+<ul>
+<li>google it <code>s3 transfer acceleration tool</code></li>
+<li><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html" target="_blank" rel="noopener">https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html</a><blockquote>
+<p>this is where </p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Cloud-Front-Overview"><a href="#Cloud-Front-Overview" class="headerlink" title="Cloud Front Overview"></a>Cloud Front Overview</h2><ul>
+<li>Edge Locatin - This is the location where content will be cached. This is separate to nan AWS Region/AZ</li>
+<li>Origin - This is the origin of all the files that the CDN will distribute. This can be either an S3 Bucket an EC2 Instance, an Elastic Load Balancer, or Route53</li>
+<li>Distribution - This is the name given the CDN which consists of a collection of Edge Locations<br>Web Distribution - Typically used for Websites<br>RTMP - Used for Media Steaming</li>
+<li>Edge location are not just <code>READ</code> only - you can write to them too.(ie, put an object on to them)</li>
+<li>Objects are cached for the life of the TTL (Time To Live)</li>
+<li>You can clear cached object, but you will be charged.</li>
+</ul>
+<h2 id="Snowball"><a href="#Snowball" class="headerlink" title="Snowball"></a>Snowball</h2><ul>
+<li>Snowball</li>
+<li>Snowball edge</li>
+<li>Snowball Mobile</li>
+<li>Snowball is a petabyte-scale datat ransport solution</li>
+<li>Snowball can Import to S3</li>
+<li>Snowball can Export from S3 </li>
+</ul>
+<h2 id="Storage-Gateway"><a href="#Storage-Gateway" class="headerlink" title="Storage Gateway"></a>Storage Gateway</h2><ul>
+<li>File Gateway (NFS &amp; SMB)<ul>
+<li>For flat files, stored directly on S3</li>
+</ul>
+</li>
+<li><p>Volume Gateway (iSCSI)</p>
+<ul>
+<li>Stored volumes - Entire Dataset is stored on site and is asynchronously backed up to S3.</li>
+<li>Cached Volumes - Entire Dataset is stored on S3 and the most frequently accessed data is cached on site.</li>
+</ul>
+</li>
+<li><p>Gateway Virtual Tape Library</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2020/04/08/AWS-course-create-billing-alarm-s3-basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/AWS-course-create-billing-alarm-s3-basic/" class="post-title-link" itemprop="url">AWS Course - Create Billing Alarm & S3 Basic</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 19:30:46" itemprop="dateCreated datePublished" datetime="2020-04-08T19:30:46+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-09 18:24:06" itemprop="dateModified" datetime="2020-04-09T18:24:06+08:00">2020-04-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/aws/" itemprop="url" rel="index"><span itemprop="name">aws</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Create-billing-alarm"><a href="#Create-billing-alarm" class="headerlink" title="Create billing alarm"></a>Create billing alarm</h2><p><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate/learn/lecture/13886250#overview" target="_blank" rel="noopener">https://www.udemy.com/course/aws-certified-solutions-architect-associate/learn/lecture/13886250#overview</a></p>
+<ol>
+<li>Using cloud watch to create alarm</li>
+</ol>
+<h2 id="S3"><a href="#S3" class="headerlink" title="S3"></a>S3</h2><p>Files are stored in Buckets</p>
+<ol>
+<li>The name have to be uniq globally</li>
+</ol>
+<p>2 if upload is suecess, http 200 code if the upload is success</p>
+<h3 id="S3-is-object-base-Think-of-Objects-just-as-a-file"><a href="#S3-is-object-base-Think-of-Objects-just-as-a-file" class="headerlink" title="S3 is object base, Think of Objects just as a file"></a>S3 is object base, Think of Objects just as a file</h3><ul>
+<li>Key (The name of the object)</li>
+<li>Value</li>
+<li>Version ID (i)</li>
+<li>Metadata (Data about data you are storing)</li>
+<li>Subresources:<br>  Access Control<br>  Torrent</li>
+</ul>
+<h3 id="How-does-data-consistency"><a href="#How-does-data-consistency" class="headerlink" title="How does data consistency ?"></a>How does data consistency ?</h3><p>Read after write consistency for PUTS of new Objects</p>
+<ul>
+<li>you can read a object immediatly after you put the file</li>
+</ul>
+<p>Eventual Consistency fro overwrite PUTS and DELETES</p>
+<ul>
+<li>update or delete a file will Eventual Consistency</li>
+</ul>
+<h3 id="S3-Standard"><a href="#S3-Standard" class="headerlink" title="S3 Standard"></a>S3 Standard</h3><p>99.99% availability<br>99.999999999% durability,<br>stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.</p>
+<h3 id="S3-IA-Infrequently-Accessed"><a href="#S3-IA-Infrequently-Accessed" class="headerlink" title="S3 - IA (Infrequently Accessed):"></a>S3 - IA (Infrequently Accessed):</h3><p>For data that is accessed less frequently, but requires rapid access when needed. Lower fee than S3 but you are charged a retrival fee.</p>
+<h3 id="S3-One-Zone-IA-Infrequently-Accessed"><a href="#S3-One-Zone-IA-Infrequently-Accessed" class="headerlink" title="S3 One Zone - IA (Infrequently Accessed):"></a>S3 One Zone - IA (Infrequently Accessed):</h3><h3 id="S3-Intelligent-Tiering"><a href="#S3-Intelligent-Tiering" class="headerlink" title="S3 - Intelligent Tiering"></a>S3 - Intelligent Tiering</h3><h3 id="S3-Glacier-data-archiving"><a href="#S3-Glacier-data-archiving" class="headerlink" title="S3 Glacier - data archiving"></a>S3 Glacier - data archiving</h3><p>super cheap<br>retriveal time is about minutes to 12 hours</p>
+<h3 id="S3-Glacier-data-archiving-1"><a href="#S3-Glacier-data-archiving-1" class="headerlink" title="S3 Glacier - data archiving"></a>S3 Glacier - data archiving</h3><p>super cheap<br>retriveal time is about 12 hours</p>
+<h3 id="S3-Charges"><a href="#S3-Charges" class="headerlink" title="S3 Charges"></a>S3 Charges</h3><ul>
+<li>Storage</li>
+<li>request </li>
+<li>Storage Management Pricing</li>
+<li>Data Transfer Pricing</li>
+<li>Transfer Acceleration<ul>
+<li>transfer S3 data to edege locations</li>
+</ul>
+</li>
+<li>Cross Region Replication Pricing<ul>
+<li>ex us-vigin-1 transfer data to sydney</li>
+</ul>
+</li>
+</ul>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ul>
+<li>Object-based</li>
+<li>0 bytes to 5TB</li>
+<li>unlimited storage</li>
+<li>files are stored in buckets</li>
+<li>s3 ard universal namespace. That is, names must be unique globally</li>
+<li><code>Not suitable</code> to install an operating system or database on.</li>
+<li>Successfull uploads will genereate a HTTP 200 status code</li>
+<li>You can turn MFA delete</li>
+</ul>
+<h3 id="The-Key-Fundamentals-of-S3-are"><a href="#The-Key-Fundamentals-of-S3-are" class="headerlink" title="The Key Fundamentals of S3 are;"></a>The Key Fundamentals of S3 are;</h3><p>Key<br>value<br>version id<br>metadata<br>subresource<br>    Access control lists<br>    torrent</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2019/12/13/cicd-2019-12-13-github-workflow-first-try/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/13/cicd-2019-12-13-github-workflow-first-try/" class="post-title-link" itemprop="url">Github Workflow First Try</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-13 18:10:09" itemprop="dateCreated datePublished" datetime="2019-12-13T18:10:09+08:00">2019-12-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-09 17:57:53" itemprop="dateModified" datetime="2020-04-09T17:57:53+08:00">2020-04-09</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="原由"><a href="#原由" class="headerlink" title="原由"></a>原由</h2><p>利用 github workflow 來建制 <a href="https://github.com/river0825/gitlab-extension-for-chrome" target="_blank" rel="noopener">gitlab extension</a>專案</p>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ul>
+<li>程式 push 上 github 之後要可以自動執行 build / test 程序</li>
+<li>有下 tag 的時後，要進行 relase 的程序</li>
+<li>要將 artifact 變成至 release 的項目之一</li>
+</ul>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ul>
+<li><p>進入 <a href="https://github.com/river0825/gitlab-extension-for-chrome/actions" target="_blank" rel="noopener">https://github.com/river0825/gitlab-extension-for-chrome/actions</a> [New workflow] 選擇想要 build 的方案。因為這個專案是使用 typescript, 所以選擇了 nodejs</p>
+</li>
+<li><p>選擇用 softprops/action-gh-release@v1 來當作 release 的工具，設定如下</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">GH</span> <span class="string">Release</span></span><br><span class="line">  <span class="attr">uses:</span> <span class="string">softprops/action-gh-release@v1</span></span><br><span class="line">  <span class="comment"># 因為只想要在有 tag 的狀況下才 release, 所以要下這個條件</span></span><br><span class="line">  <span class="attr">if:</span> <span class="string">startsWith(github.ref,</span> <span class="string">'refs/tags/'</span><span class="string">)</span></span><br><span class="line">  <span class="attr">env:</span></span><br><span class="line">    <span class="attr">GITHUB_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">  <span class="comment"># 把 artifact 裡面的檔案變成 relase 的一部份</span></span><br><span class="line">  <span class="comment"># 這裡的寫法有特別找了一下，要用 | 的方式</span></span><br><span class="line">    <span class="attr">files:</span> <span class="string">|</span></span><br><span class="line">      <span class="string">./artifact/gitlab-extension.zip</span></span><br><span class="line">      <span class="string">./artifact/gitlab-extension.crx</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/river0825/gitlab-extension-for-chrome/blob/master/.github/workflows/nodejs.yml" target="_blank" rel="noopener">完整設定在這</a></p>
+<h2 id="學習點"><a href="#學習點" class="headerlink" title="學習點"></a>學習點</h2><ul>
+<li>git tag 的用法 (add, delete)</li>
+<li>git push —delete origin v1.0.x (刪掉 remote 的 tag)</li>
+<li>第一次使用 github workflow, 且可以自動 release </li>
+</ul>
+<h2 id="遇到的問題"><a href="#遇到的問題" class="headerlink" title="遇到的問題"></a>遇到的問題</h2><ul>
+<li>想要把產出來的檔案附加上版本號，但目前還無法</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions" target="_blank" rel="noopener">Workflow syntax for GitHub Actions</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2019/11/09/k8s-0-first-time-to-met-helm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/09/k8s-0-first-time-to-met-helm/" class="post-title-link" itemprop="url">K8s From Hero to Zero</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-09 22:09:57" itemprop="dateCreated datePublished" datetime="2019-11-09T22:09:57+08:00">2019-11-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-10 07:16:08" itemprop="dateModified" datetime="2019-11-10T07:16:08+08:00">2019-11-10</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天上的 Helm / skaffold / terraform / istio</p>
+<p>真的有點開眼界</p>
+<p>Helm 管理 k8s container 的狀態</p>
+<p>用 skaffold 來加速發佈的流程</p>
+<p>Terraform 來建立需要的 VM</p>
+<p>istio 來建立 service mesh, 進行圖型化的監控</p>
+<p>相關資源如下</p>
+<p>Slide:<a href="https://reurl.cc/EKV2b1" target="_blank" rel="noopener">https://reurl.cc/EKV2b1</a></p>
+<p>Slide:<a href="https://reurl.cc/EKV2b1" target="_blank" rel="noopener">https://reurl.cc/EKV2b1</a></p>
+<p>接下來會花幾天的時間好好的消化一下</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2019/11/08/Change-file-modify-time-with-git-log-with-gnu-date/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/08/Change-file-modify-time-with-git-log-with-gnu-date/" class="post-title-link" itemprop="url">Change File Modify Time With Git Log With Gnu Date</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-08 20:12:00 / Modified: 04:21:27" itemprop="dateCreated datePublished" datetime="2019-11-08T20:12:00+08:00">2019-11-08</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="原由"><a href="#原由" class="headerlink" title="原由"></a>原由</h2><p>使用 circle ci 來進行 hexo 發佈時，hexo 會用 檔案時間來當作 發佈時間</p>
+<p>git pull 並無法保留 檔案時間，所以才去找了該如何以 git log 進行修改</p>
+<h2 id="解決方案"><a href="#解決方案" class="headerlink" title="解決方案"></a>解決方案</h2><p>方法 1.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line">IFS=<span class="string">"</span></span><br><span class="line"><span class="string">"</span></span><br><span class="line"><span class="keyword">for</span> FILE <span class="keyword">in</span> $(git ls-files)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    TIME=$(git <span class="built_in">log</span> --pretty=format:%<span class="built_in">cd</span> -n 1 --date=iso -- <span class="string">"<span class="variable">$FILE</span>"</span>)</span><br><span class="line">    TIME=$(date -j -f <span class="string">'%Y-%m-%d %H:%M:%S %z'</span> <span class="string">"<span class="variable">$TIME</span>"</span> +%Y%m%d%H%M.%S)</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$TIME</span> <span class="variable">$FILE</span> </span><br><span class="line">    touch -m -t <span class="string">"<span class="variable">$TIME</span>"</span> <span class="string">"<span class="variable">$FILE</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>結果 circle-ci 上的 docker image 用的是 gnu date, 沒有 -j 的參數</p>
+<p>!!失敗!!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line">IFS=<span class="string">"</span></span><br><span class="line"><span class="string">"</span></span><br><span class="line"><span class="keyword">for</span> FILE <span class="keyword">in</span> $(git ls-files)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    TIME=$(git <span class="built_in">log</span> --pretty=format:%<span class="built_in">cd</span> -n 1 --date=iso -- <span class="string">"<span class="variable">$FILE</span>"</span>)</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$TIME</span> <span class="variable">$FILE</span></span><br><span class="line">    <span class="built_in">read</span> Y M D h i s t -d <span class="string">' '</span> &lt;&lt;&lt;  <span class="variable">$&#123;TIME//[-:+]/ &#125;</span></span><br><span class="line">    TIME1=<span class="string">"<span class="variable">$Y</span><span class="variable">$M</span><span class="variable">$D</span><span class="variable">$h</span><span class="variable">$i</span>.<span class="variable">$s</span>"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$TIME1</span> <span class="variable">$FILE</span> </span><br><span class="line">    touch -m -t <span class="string">"<span class="variable">$&#123;TIME1&#125;</span>"</span> <span class="string">"<span class="variable">$FILE</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>結果 circle-ci 上的 docker image 裡執行的時後無法正確的把資料讀進每個參數中</p>
+<p>!!失敗!!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line">IFS=<span class="string">"</span></span><br><span class="line"><span class="string">"</span></span><br><span class="line"><span class="keyword">for</span> FILE <span class="keyword">in</span> $(git ls-files)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    TIME=$(git <span class="built_in">log</span> --pretty=format:%<span class="built_in">cd</span> -n 1 --date=iso -- <span class="string">"<span class="variable">$FILE</span>"</span>)</span><br><span class="line">    <span class="comment"># echo $TIME $FILE</span></span><br><span class="line">    TIME1=$(<span class="built_in">echo</span> <span class="variable">$&#123;TIME//[-:+]/ &#125;</span> | awk -F <span class="string">' '</span> <span class="string">'&#123;print $1$2$3$4$5"."$6&#125;'</span>)</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$TIME</span> <span class="variable">$FILE</span></span><br><span class="line">    touch -m -t <span class="string">"<span class="variable">$&#123;TIME1&#125;</span>"</span> <span class="string">"<span class="variable">$FILE</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>最後用了 awk 才成功</p>
+<hr>
+<h2 id="但其實不用這麼麻煩"><a href="#但其實不用這麼麻煩" class="headerlink" title="但其實不用這麼麻煩"></a>但其實不用這麼麻煩</h2><p>在 markdown 檔頭加入 <code>date: 1573215120000</code> 指定寫作的時間就行了</p>
+<p>修改 scaffolds 中的檔案，下次 new 新的 寫作就不會再缺少這個設定</p>
+<p>可惡，浪費我 3 個小時生命!!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2019/11/06/How-to-configurate-Circle-CI-with-github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/06/How-to-configurate-Circle-CI-with-github/" class="post-title-link" itemprop="url">How to Setup Circle CI in New Project With Cli</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-06 20:51:02" itemprop="dateCreated datePublished" datetime="2019-11-06T20:51:02+08:00">2019-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-07 04:52:42" itemprop="dateModified" datetime="2019-11-07T04:52:42+08:00">2019-11-07</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Prerequirement"><a href="#Prerequirement" class="headerlink" title="Prerequirement"></a>Prerequirement</h2><p>You have to have a cicleci account linked with github</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="Install-circleci"><a href="#Install-circleci" class="headerlink" title="Install circleci"></a>Install circleci</h3><p>In OSX</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install circleci</span><br></pre></td></tr></table></figure>
+<p>Circle-CI setup</p>
+<p>Create api token from <a href="https://circleci.com/account/api" target="_blank" rel="noopener">here</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settup circle api token</span></span><br><span class="line">➜  blog-src git:(master) ✗ circleci setup</span><br><span class="line">✔ CircleCI API Token: ****************************************</span><br><span class="line">API token has been <span class="built_in">set</span>.</span><br><span class="line">✔ CircleCI Host: https://circleci.com</span><br><span class="line">CircleCI host has been <span class="built_in">set</span>.</span><br><span class="line">Setup complete.</span><br><span class="line">Your configuration has been saved to !/.circleci/cli.yml.</span><br><span class="line"></span><br><span class="line">Trying an introspection query on API to verify your setup... Ok.</span><br><span class="line">Trying to query our API <span class="keyword">for</span> your profile name... Hello!%</span><br></pre></td></tr></table></figure>
+<p>Setting up circle ci config file<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$&#123;PRJ_FOLDER&#125;</span>; mkdir .circleci; <span class="built_in">cd</span> .circleci; touch config.yml</span><br></pre></td></tr></table></figure></p>
+<p>Get sample file from <a href="https://circleci.com/docs/2.0/example-configs/" target="_blank" rel="noopener">here</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">docker:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">circleci/&lt;language&gt;:&lt;version</span> <span class="string">TAG&gt;</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">checkout</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">&lt;command&gt;</span> </span><br><span class="line">  <span class="attr">test:</span></span><br><span class="line">    <span class="attr">docker:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">circleci/&lt;language&gt;:&lt;version</span> <span class="string">TAG&gt;</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">checkout</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">&lt;command&gt;</span></span><br><span class="line"><span class="attr">workflows:</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">build_and_test:</span></span><br><span class="line">    <span class="attr">jobs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">build</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">test</span></span><br></pre></td></tr></table></figure>
+<p>Validate config in local, and execute it in local</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ circleci config validate</span><br><span class="line">$ circleci <span class="built_in">local</span> execute</span><br></pre></td></tr></table></figure>
+<p>At last, add everything and push them to github.</p>
+<p>Go <a href="https://circleci.com/dashboard" target="_blank" rel="noopener">Circle Ci</a> for result.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2019/11/05/docker-how-to-pull-docker-compose/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/05/docker-how-to-pull-docker-compose/" class="post-title-link" itemprop="url">How to Pull Docker/compose</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-05 23:23:42" itemprop="dateCreated datePublished" datetime="2019-11-05T23:23:42+08:00">2019-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-06 07:46:45" itemprop="dateModified" datetime="2019-11-06T07:46:45+08:00">2019-11-06</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>當你想在 ci 中使用 docker-compose 來建立 image 的時後會 無法 pull docker/compose 這個 images</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull docker/compose</span><br><span class="line">Using default tag: latest</span><br><span class="line">Error response from daemon: manifest <span class="keyword">for</span> docker/compose:latest not found: manifest unknown: manifest unknown</span><br></pre></td></tr></table></figure>
+<p>在 overview 中的 pull command 是騙人的，根本無法下載</p>
+<p>原來 docker/compose 沒有 latest 這個 tag</p>
+<p>查了一下 docker/compose 有的 tag</p>
+<p><a href="https://hub.docker.com/r/docker/compose/tags" target="_blank" rel="noopener">https://hub.docker.com/r/docker/compose/tags</a></p>
+<p>使用這裡的 tag 來下載就行了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker/compose:1.24.1</span><br></pre></td></tr></table></figure>
+<p>成功!!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2019/08/03/docker-swarm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/03/docker-swarm/" class="post-title-link" itemprop="url">Docker-Swarm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-03 12:58:28" itemprop="dateCreated datePublished" datetime="2019-08-03T12:58:28+08:00">2019-08-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-06 07:46:45" itemprop="dateModified" datetime="2019-11-06T07:46:45+08:00">2019-11-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2018/10/27/sinica/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/10/27/sinica/" class="post-title-link" itemprop="url">中研院演講 - 極端氣候九局下半</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-10-27 10:36:34" itemprop="dateCreated datePublished" datetime="2018-10-27T10:36:34+08:00">2018-10-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-07 01:07:13" itemprop="dateModified" datetime="2019-11-07T01:07:13+08:00">2019-11-07</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2017 的災害 發生次數 大於 2007 ~ 2016 年的總合</p>
+<p>地表及海面溫度在近百年內已上昇了 0.85 度</p>
+<p>溫室氣體的快速增加是主因(CO2)</p>
+<p>CO2 每年產生 40 giga(10 億) tones / year</p>
+<p>溫室效應!!</p>
+<p>為何 co2 變多 ==&gt;  能源使用過多~  煤 石油 天燃氣</p>
+<p>how to solve??  急速減碳!!  到 2050 前要還清負債</p>
+<p>2050 年前 - 零排放， 2050 年後 - 負排放!!</p>
+<h3 id="減碳"><a href="#減碳" class="headerlink" title="減碳!!"></a>減碳!!</h3><ul>
+<li>在地食材 <blockquote>
+<p>菜!!<br>食材</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>交通</li>
+</ul>
+<h2 id="用電分佈"><a href="#用電分佈" class="headerlink" title="用電分佈"></a>用電分佈</h2><p>台灣 每人 每褘 10632 度</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="River Lin"
+      src="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+  <p class="site-author-name" itemprop="name">River Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">River Lin</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey   : 'AIzaSyAkoTeRAHq1ynmGSi1HGFkyEGzVhXh-xmo',
+      projectId: 'tech-me-river'
+    });
+
+    function getCount(doc, increaseCount) {
+      // IncreaseCount will be false when not in article page
+      return doc.get().then(d => {
+        var count = 0;
+        if (!d.exists) { // Has no data, initialize count
+          if (increaseCount) {
+            doc.set({
+              count: 1
+            });
+            count = 1;
+          }
+        } else { // Has data
+          count = d.data().count;
+          if (increaseCount) {
+            // If first view this article
+            doc.set({ // Increase count
+              count: count + 1
+            });
+            count++;
+          }
+        }
+
+        return count;
+      });
+    }
+
+    function appendCountTo(el) {
+      return count => {
+        el.innerText = count;
+      }
+    }
+  </script>
+  <script>
+    (function() {
+      var db = firebase.firestore();
+      var articles = db.collection('articles');
+
+      if (CONFIG.page.isPost) { // Is article page
+        var title = document.querySelector('.post-title').innerText.trim();
+        var doc = articles.doc(title);
+        var increaseCount = CONFIG.hostname === location.hostname;
+        if (localStorage.getItem(title)) {
+          increaseCount = false;
+        } else {
+          // Mark as visited
+          localStorage.setItem(title, true);
+        }
+        getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
+      } else if (CONFIG.page.isHome) { // Is index page
+        var promises = [...document.querySelectorAll('.post-title')].map(element => {
+          var title = element.innerText.trim();
+          var doc = articles.doc(title);
+          return getCount(doc);
+        });
+        Promise.all(promises).then(counts => {
+          var metas = document.querySelectorAll('.firestore-visitors-count');
+          counts.forEach((val, idx) => {
+            appendCountTo(metas[idx])(val);
+          });
+        });
+      }
+    })();
+  </script>
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://river0825.github.io/',]
+      });
+      });
+  </script>
+
+
+</body>
+</html>
