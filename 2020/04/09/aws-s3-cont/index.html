@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="cht">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Microsoft JhengHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"river0825.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="S3 security and encryptionEncryption In Transit is achieved by  SSL&#x2F;TLS  Server Side Encryption  S3 Managed Keys - SSE-S3 AWS Key Management Service, Managed Keys - SSE-KMS Server Side Encryption with">
+<meta name="keywords" content="Tech">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aws-S3-Cont">
+<meta property="og:url" content="https:&#x2F;&#x2F;river0825.github.io&#x2F;2020&#x2F;04&#x2F;09&#x2F;aws-s3-cont&#x2F;index.html">
+<meta property="og:site_name" content="Tech Me, River!!">
+<meta property="og:description" content="S3 security and encryptionEncryption In Transit is achieved by  SSL&#x2F;TLS  Server Side Encryption  S3 Managed Keys - SSE-S3 AWS Key Management Service, Managed Keys - SSE-KMS Server Side Encryption with">
+<meta property="og:locale" content="cht">
+<meta property="og:updated_time" content="2020-04-13T08:46:15.000Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://river0825.github.io/2020/04/09/aws-s3-cont/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'cht'
+  };
+</script>
+
+  <title>Aws-S3-Cont | Tech Me, River!!</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126979522-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126979522-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Tech Me, River!!</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/river0825" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cht">
+    <link itemprop="mainEntityOfPage" href="https://river0825.github.io/2020/04/09/aws-s3-cont/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+      <meta itemprop="name" content="River Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Me, River!!">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Aws-S3-Cont
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-09 22:23:54" itemprop="dateCreated datePublished" datetime="2020-04-09T22:23:54+08:00">2020-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-13 16:46:15" itemprop="dateModified" datetime="2020-04-13T16:46:15+08:00">2020-04-13</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="S3-security-and-encryption"><a href="#S3-security-and-encryption" class="headerlink" title="S3 security and encryption"></a>S3 security and encryption</h2><p>Encryption In Transit is achieved by</p>
+<ul>
+<li>SSL/TLS</li>
+</ul>
+<p>Server Side Encryption</p>
+<ul>
+<li>S3 Managed Keys - SSE-S3</li>
+<li>AWS Key Management Service, Managed Keys - SSE-KMS</li>
+<li>Server Side Encryption with Client Provided Keys - SSE-C</li>
+</ul>
+<h2 id="S3-versioning-With-S3"><a href="#S3-versioning-With-S3" class="headerlink" title="S3 versioning With S3;"></a>S3 versioning With S3;</h2><p>Stores all versions of an object(including all wirtes and event if you delete an object)<br>Greate backup tool<br>Once enabled, Versioning cannot be disabled, only suspended<br>Integrates with Lifecycle rules<br>Versioning’s <code>MFA Delete</code> capability, which uses multi-factor authentication, </p>
+<h2 id="Lifecycle-Management-with-S3"><a href="#Lifecycle-Management-with-S3" class="headerlink" title="Lifecycle Management with S3"></a>Lifecycle Management with S3</h2><ol>
+<li>Automate moving your objects between the different storage tiers.</li>
+<li>Can be used in cojunction with versioning.</li>
+<li>can be applied to current versions and previous versions</li>
+</ol>
+<h2 id="AWS-Organizations-amp-Consolidated-Billing"><a href="#AWS-Organizations-amp-Consolidated-Billing" class="headerlink" title="AWS Organizations &amp; Consolidated Billing"></a>AWS Organizations &amp; Consolidated Billing</h2><ul>
+<li>Always enable multi-facotr authentication on root account</li>
+<li>Always use a strong and complex password on root account</li>
+<li>Paying account should be used for billing purposes only. Do not deploy resources into the paying account</li>
+<li>Enabled/Disable AWS services using Service Control Policies(SCP) either on OU or indevidual accounts.</li>
+</ul>
+<h2 id="Share-s3-bucket-Across-Accounts"><a href="#Share-s3-bucket-Across-Accounts" class="headerlink" title="Share s3 bucket Across Accounts"></a>Share s3 bucket Across Accounts</h2><ul>
+<li>Using Bucket Policies * IAM (applies across the entire bucket). Programmatic Access Only.</li>
+<li>Using bucket ACLs &amp; IAM(individual objects). Programmatic Access Only.</li>
+<li>Cross-account IAM Roles, Programatic and console access.</li>
+</ul>
+<h2 id="Cross-Region-Replication"><a href="#Cross-Region-Replication" class="headerlink" title="Cross Region Replication"></a>Cross Region Replication</h2><ul>
+<li>Versioning must be enabled on both the source and destination buckets.</li>
+<li>Files in an existsing bucket are not replicated automatically.</li>
+<li>All subsequent updated files will be replicated automatically.</li>
+<li>Delete markers are not replicated.</li>
+<li>Deleting individual versions or delete markders will not be replicated.</li>
+<li>Understand what Cross Region Repliction is at a high level.</li>
+</ul>
+<h2 id="S3-transfer-Acceleration"><a href="#S3-transfer-Acceleration" class="headerlink" title="S3 transfer Acceleration"></a>S3 transfer Acceleration</h2><p>Accelerate your uploads to S3</p>
+<ul>
+<li>google it <code>s3 transfer acceleration tool</code></li>
+<li><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html" target="_blank" rel="noopener">https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html</a><blockquote>
+<p>this is where </p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Cloud-Front-Overview"><a href="#Cloud-Front-Overview" class="headerlink" title="Cloud Front Overview"></a>Cloud Front Overview</h2><ul>
+<li>Edge Locatin - This is the location where content will be cached. This is separate to nan AWS Region/AZ</li>
+<li>Origin - This is the origin of all the files that the CDN will distribute. This can be either an S3 Bucket an EC2 Instance, an Elastic Load Balancer, or Route53</li>
+<li>Distribution - This is the name given the CDN which consists of a collection of Edge Locations<br>Web Distribution - Typically used for Websites<br>RTMP - Used for Media Steaming</li>
+<li>Edge location are not just <code>READ</code> only - you can write to them too.(ie, put an object on to them)</li>
+<li>Objects are cached for the life of the TTL (Time To Live)</li>
+<li>You can clear cached object, but you will be charged.</li>
+</ul>
+<h2 id="Snowball"><a href="#Snowball" class="headerlink" title="Snowball"></a>Snowball</h2><ul>
+<li>Snowball</li>
+<li>Snowball edge</li>
+<li>Snowball Mobile</li>
+<li>Snowball is a petabyte-scale datat ransport solution</li>
+<li>Snowball can Import to S3</li>
+<li>Snowball can Export from S3 </li>
+</ul>
+<h2 id="Storage-Gateway"><a href="#Storage-Gateway" class="headerlink" title="Storage Gateway"></a>Storage Gateway</h2><ul>
+<li>File Gateway (NFS &amp; SMB)<ul>
+<li>For flat files, stored directly on S3</li>
+</ul>
+</li>
+<li><p>Volume Gateway (iSCSI)</p>
+<ul>
+<li>Stored volumes - Entire Dataset is stored on site and is asynchronously backed up to S3.</li>
+<li>Cached Volumes - Entire Dataset is stored on S3 and the most frequently accessed data is cached on site.</li>
+</ul>
+</li>
+<li><p>Gateway Virtual Tape Library</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/08/AWS-course-create-billing-alarm-s3-basic/" rel="prev" title="AWS Course - Create Billing Alarm & S3 Basic">
+      <i class="fa fa-chevron-left"></i> AWS Course - Create Billing Alarm & S3 Basic
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/12/%E6%95%8F%E6%8D%B7%E6%80%9D%E7%B6%AD%E5%B0%88%E9%A1%8C/" rel="next" title="敏捷思維專題">
+      敏捷思維專題 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#S3-security-and-encryption"><span class="nav-number">1.</span> <span class="nav-text">S3 security and encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S3-versioning-With-S3"><span class="nav-number">2.</span> <span class="nav-text">S3 versioning With S3;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lifecycle-Management-with-S3"><span class="nav-number">3.</span> <span class="nav-text">Lifecycle Management with S3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Organizations-amp-Consolidated-Billing"><span class="nav-number">4.</span> <span class="nav-text">AWS Organizations &amp; Consolidated Billing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Share-s3-bucket-Across-Accounts"><span class="nav-number">5.</span> <span class="nav-text">Share s3 bucket Across Accounts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cross-Region-Replication"><span class="nav-number">6.</span> <span class="nav-text">Cross Region Replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S3-transfer-Acceleration"><span class="nav-number">7.</span> <span class="nav-text">S3 transfer Acceleration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Front-Overview"><span class="nav-number">8.</span> <span class="nav-text">Cloud Front Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snowball"><span class="nav-number">9.</span> <span class="nav-text">Snowball</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storage-Gateway"><span class="nav-number">10.</span> <span class="nav-text">Storage Gateway</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="River Lin"
+      src="https://s.gravatar.com/avatar/50d1be9d8ff71c0b0452e3742853db7a?s=80">
+  <p class="site-author-name" itemprop="name">River Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">River Lin</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey   : 'AIzaSyAkoTeRAHq1ynmGSi1HGFkyEGzVhXh-xmo',
+      projectId: 'tech-me-river'
+    });
+
+    function getCount(doc, increaseCount) {
+      // IncreaseCount will be false when not in article page
+      return doc.get().then(d => {
+        var count = 0;
+        if (!d.exists) { // Has no data, initialize count
+          if (increaseCount) {
+            doc.set({
+              count: 1
+            });
+            count = 1;
+          }
+        } else { // Has data
+          count = d.data().count;
+          if (increaseCount) {
+            // If first view this article
+            doc.set({ // Increase count
+              count: count + 1
+            });
+            count++;
+          }
+        }
+
+        return count;
+      });
+    }
+
+    function appendCountTo(el) {
+      return count => {
+        el.innerText = count;
+      }
+    }
+  </script>
+  <script>
+    (function() {
+      var db = firebase.firestore();
+      var articles = db.collection('articles');
+
+      if (CONFIG.page.isPost) { // Is article page
+        var title = document.querySelector('.post-title').innerText.trim();
+        var doc = articles.doc(title);
+        var increaseCount = CONFIG.hostname === location.hostname;
+        if (localStorage.getItem(title)) {
+          increaseCount = false;
+        } else {
+          // Mark as visited
+          localStorage.setItem(title, true);
+        }
+        getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
+      } else if (CONFIG.page.isHome) { // Is index page
+        var promises = [...document.querySelectorAll('.post-title')].map(element => {
+          var title = element.innerText.trim();
+          var doc = articles.doc(title);
+          return getCount(doc);
+        });
+        Promise.all(promises).then(counts => {
+          var metas = document.querySelectorAll('.firestore-visitors-count');
+          counts.forEach((val, idx) => {
+            appendCountTo(metas[idx])(val);
+          });
+        });
+      }
+    })();
+  </script>
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '535795f9a9a3ef1b0508',
+      clientSecret: 'ca7857aa80031f500c42f4a0dadf0a35ee6be70c',
+      repo        : 'blog-comments',
+      owner       : 'river0825',
+      admin       : ['river0825'],
+      id          : '08ce33e7c8fd91f2ff44cb6f5d128fa0',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
